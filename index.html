@@ -1,38 +1,110 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+Srividya srividyacb
+ 
+1  Watch 
+  Star 0
+ Fork 0planemad/mapboxjs-example
+ branch: gh-pages  mapboxjs-example/index.html
+Arun Ganeshplanemad 2 minutes ago add controls
+1 contributor
+104 lines (73 sloc)  2.217 kb RawBlameHistory   
 <!DOCTYPE html>
 <html>
 <head>
+    
 <meta charset=utf-8 />
-<title>Bangalore Bus-Routes Map</title>
+<title>A simple map</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+    
 <style>
-  body { margin:20px; padding:0; }
-  #map { position:absolute; top:60px; bottom:0; width:100%; }
+    
+    
+  body { margin:0; padding:0; }
+    
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+    
 </style>
 </head>
+    
 <body>
-<div id='map'></div>
-<script>
-L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg';
-var map = L.mapbox.map('map', 'srividya.39150a4d')
-    .setView([12.9908, 77.5977], 15);
-</script>
-var directions = L.mapbox.directions();
+    
+    
+    <style>
+#inputs,
+#errors,
+#directions {
+    position: absolute;
+    width: 33.3333%;
+    max-width: 300px;
+    min-width: 200px;
+}
+#inputs {
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+}
+#directions {
+    z-index: 99;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+#errors {
+    z-index: 8;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background: rgba(0,0,0,.25);
+    top: 90px;
+    left: 10px;
+}
+</style>
 
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.1.0/mapbox.directions.js'></script>
+<link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.1.0/mapbox.directions.css' type='text/css' />
+    
+    <h1>Map</h1>
+    
+<div id='map'></div>
+<div id='inputs'></div>
+<div id='errors'></div>
+<div id='directions'>
+  <div id='routes'></div>
+  <div id='instructions'></div>
+</div>
+    
+    
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg'; var map = L.mapbox.map('map', 'srividya.39150a4d') .setView([12.9908, 77.5977], 15);
+    
+var directions = L.mapbox.directions();
 var directionsLayer = L.mapbox.directions.layer(directions)
     .addTo(map);
-
 var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
     .addTo(map);
-
 var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
     .addTo(map);
-
 var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
     .addTo(map);
-
 var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
     .addTo(map);
+    
+</script>
+    
+    
 </body>
+    
 </html>
+
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact
