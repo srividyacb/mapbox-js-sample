@@ -7,10 +7,32 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1343.14">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">Hello World!!</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset=utf-8 /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;A simple map&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>body { margin:0; padding:0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#map { position:absolute; top:0; bottom:0; width:100%; }</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id='map'&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg';</span></p>
+<p class="p1"><span class="s1">var map = L.mapbox.map('map', 'examples.map-i86nkdio')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.setView([40, -74.50], 9);</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
