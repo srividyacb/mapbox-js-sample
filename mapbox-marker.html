@@ -17,11 +17,15 @@
 <div id='map'></div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg';
-    var map = L.mapbox.map('map', 'examples.map-zr0njcqy');
+    var map = L.mapbox.map('map', 'srividya.kdj8hk12');
 
-    map.featureLayer.on('click', function(e) {
-        map.panTo(e.layer.getLatLng());
-    });
+    var featureLayer = L.mapbox.featureLayer()
+    .addTo(map);
+
+// loads markers from the map `examples.map-0l53fhk2` on Mapbox,
+// if that map has markers
+featureLayer.loadID('srividya.kdj8hk12');
+  
 </script>
 
 
