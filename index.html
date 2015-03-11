@@ -87,6 +87,7 @@ var directionsRoutesControl = L.mapbox.directions.routesControl('routes', direct
     .addTo(map);
 var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
     .addTo(map);
+     
 var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
 featureLayer.eachLayer(function(layer) {
     var e = layer.feature.properties['@id'].split('/');
