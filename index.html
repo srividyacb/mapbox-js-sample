@@ -1,18 +1,3 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-Srividya srividyacb
- 
-1  Watch 
-  Star 0
- Fork 0planemad/mapboxjs-example
- branch: gh-pages  mapboxjs-example/index.html
-Arun Ganeshplanemad 2 minutes ago add controls
-1 contributor
-104 lines (73 sloc)  2.217 kb RawBlameHistory   
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +8,7 @@ Arun Ganeshplanemad 2 minutes ago add controls
     
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
     
 <style>
     
@@ -83,10 +69,13 @@ Arun Ganeshplanemad 2 minutes ago add controls
   <div id='instructions'></div>
 </div>
     
-    
-<script>
-L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg'; var map = L.mapbox.map('map', 'srividya.39150a4d') .setView([12.9908, 77.5977], 15);
-    
+
+ <script>   
+L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg';
+var map = L.mapbox.map('map', 'srividya.39150a4d')
+    .setView([12.9908, 77.5977], 15)
+    .addControl(L.mapbox.geocoderControl('mapbox.places', {autocomplete: true}));
+var hash = L.hash(map);
 var directions = L.mapbox.directions();
 var directionsLayer = L.mapbox.directions.layer(directions)
     .addTo(map);
@@ -98,6 +87,19 @@ var directionsRoutesControl = L.mapbox.directions.routesControl('routes', direct
     .addTo(map);
 var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
     .addTo(map);
+var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
+featureLayer.eachLayer(function(layer) {
+    var e = layer.feature.properties['@id'].split('/');
+    var content = "<h1><a href='http://www.openstreetmap.org/edit?node=" + 
+         e[1] + "'>" +
+        layer.feature.properties.name + "</a></h1>";
+    layer.bindPopup(content);
+});
+     </script>
+
+    
+
+
     
 </script>
     
