@@ -16,6 +16,9 @@
   body { margin:0; padding:0; }
     
   #map { position:absolute; top:60px; bottom:0px; width:100%; }
+    icon
+    {
+        
      
 </style>
 </head>
@@ -36,7 +39,9 @@
   <div id='routes'></div>
   <div id='instructions'></div>
 </div>
-    
+ <div class="icon">
+            <p><img src='bus-24.png' width='24' height='28'></p>
+          </div>   
 
  <script>   
 L.mapbox.accessToken = 'pk.eyJ1Ijoic3JpdmlkeWEiLCJhIjoicXo2NTJKayJ9.m1P57SCwkp8_7N3TgYsVRg';
@@ -54,6 +59,7 @@ featureLayer.eachLayer(function(layer) {
     layer.bindPopup(content);
 });
      </script>
+    
     
 
     
