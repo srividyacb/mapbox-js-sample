@@ -50,14 +50,14 @@ var map = L.mapbox.map('map', 'srividya.39150a4d')
     .addControl(L.mapbox.geocoderControl('mapbox.places', {autocomplete: true}));
 var hash = L.hash(map);
      
-var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
+/*var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
 featureLayer.eachLayer(function(layer) {
     var e = layer.feature.properties['@id'].split('/');
     var content = "<h1><a href='http://www.openstreetmap.org/edit?node=" + 
          e[1] + "'>" +
         layer.feature.properties.name + "</a></h1>";
     layer.bindPopup(content);
-});
+});*/
      </script>
     
     
