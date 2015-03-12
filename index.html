@@ -9,15 +9,14 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
-    <style>
+    <script src='busstops.js'></script>
+<style>
     
     
   body { margin:0; padding:0; }
     
   #map { position:absolute; top:60px; bottom:0px; width:100%; }
-    icon
-    {
-        
+    
      
 </style>
 </head>
@@ -49,16 +48,15 @@ var map = L.mapbox.map('map', 'srividya.39150a4d')
     .addControl(L.mapbox.geocoderControl('mapbox.places', {autocomplete: true}));
 var hash = L.hash(map);
      
-/*var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
+var featureLayer = L.mapbox.featureLayer(busstops).addTo(map);
 featureLayer.eachLayer(function(layer) {
     var e = layer.feature.properties['@id'].split('/');
     var content = "<h1><a href='http://www.openstreetmap.org/edit?node=" + 
          e[1] + "'>" +
         layer.feature.properties.name + "</a></h1>";
     layer.bindPopup(content);
-});*/
+});
      </script>
-    
     
 
     
